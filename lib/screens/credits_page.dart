@@ -147,7 +147,7 @@ class CreditsScreen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: InkWell(
                 onTap: () async {
-                  const url = 'https://github.com/arafaysaleem/covid_tracker';
+                  const url = 'https://github.com/zaidmukaddam/Covid-19-Tracker';
                   if (await canLaunch(url)) {
                     await launch(
                       url,

@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import '../screens/home_page.dart';
 
 // ignore: must_be_immutable
 class VirusDetailsScreen extends StatelessWidget {
@@ -59,7 +60,7 @@ class VirusDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     double pageHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: lighttheme ? Colors.blueGrey : Colors.grey[100],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(

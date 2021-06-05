@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../values/default_country_data.dart';
@@ -83,12 +84,11 @@ class _CountryCardDetailsState extends State<CountryCardDetails>
                 child: AutoSizeText(
                   "Today",
                   style: TextStyle(
-                      fontFamily: "Montserrat",
-                      fontWeight: selectedIndex == 0
-                          ? FontWeight.w700
-                          : FontWeight.w600,
-                      color: Colors.grey[800],
-                      fontSize: 22.0,
+                    fontFamily: "Montserrat",
+                    fontWeight:
+                        selectedIndex == 0 ? FontWeight.w700 : FontWeight.w600,
+                    color: lighttheme ? Colors.white : Colors.grey[800],
+                    fontSize: 22.0,
                   ),
                   maxFontSize: 22,
                 ),
@@ -108,12 +108,11 @@ class _CountryCardDetailsState extends State<CountryCardDetails>
                 child: AutoSizeText(
                   "Yesterday",
                   style: TextStyle(
-                      fontFamily: "Montserrat",
-                      fontWeight: selectedIndex == 0
-                          ? FontWeight.w600
-                          : FontWeight.w700,
-                      color: Colors.grey[800],
-                      fontSize: 22.0,
+                    fontFamily: "Montserrat",
+                    fontWeight:
+                        selectedIndex == 0 ? FontWeight.w600 : FontWeight.w700,
+                    color: lighttheme ? Colors.white : Colors.grey[800],
+                    fontSize: 22.0,
                   ),
                   maxFontSize: 22,
                 ),
@@ -186,10 +185,9 @@ class _CountryCardDetailsState extends State<CountryCardDetails>
                     messageText: AutoSizeText(
                       "${widget.countryName} set as default country",
                       style: TextStyle(
-                        fontFamily: "Montserrat",
-                        fontSize: 17,
-                        color: Colors.white
-                      ),
+                          fontFamily: "Montserrat",
+                          fontSize: 17,
+                          color: Colors.white),
                       maxFontSize: 17,
                     ),
                     flushbarPosition: FlushbarPosition.BOTTOM,

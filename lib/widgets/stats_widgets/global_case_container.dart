@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 
 import '../../screens/stats_dashboard_screens/world_stat.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,7 @@ class _GlobalCaseContainerState extends State<GlobalCaseContainer> {
       elevation: 4,
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.indigoAccent,
+            color: lighttheme ? Colors.transparent : Colors.white,
             borderRadius: BorderRadius.circular(16)),
         height: MediaQuery.of(context).size.width > 340 ? 298 : 302,
         padding: const EdgeInsets.fromLTRB(5, 16, 5, 16),

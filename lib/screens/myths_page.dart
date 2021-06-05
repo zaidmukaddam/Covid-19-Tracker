@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../screens/home_page.dart';
 
 // ignore: must_be_immutable
 class MythsScreen extends StatelessWidget {
@@ -71,7 +73,7 @@ class MythsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: lighttheme ? Colors.redAccent[300] : Colors.grey[100],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(

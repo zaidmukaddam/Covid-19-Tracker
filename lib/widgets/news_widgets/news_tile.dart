@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-
+import '../../screens/home_page.dart';
 import 'my_web_view.dart';
 
 // ignore: must_be_immutable
@@ -59,7 +59,9 @@ class NewsTile extends StatelessWidget {
                       height: 95,
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/updates/news.png"),
+                          image: lighttheme
+                              ? AssetImage("assets/updates/new.png")
+                              : AssetImage("assets/updates/news.png"),
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -82,7 +84,7 @@ class NewsTile extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: "Montserrat",
                           fontSize: 13,
-                          color: Colors.black,
+                          color: lighttheme ? Colors.white : Colors.black,
                           fontWeight: FontWeight.w600,
                         ),
                         stepGranularity: 1,
@@ -105,7 +107,9 @@ class NewsTile extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: "Montserrat",
                             fontSize: 11.8,
-                            color: Colors.grey[600],
+                            color: lighttheme
+                                ? Colors.grey[600]
+                                : Colors.grey[900],
                             fontWeight: FontWeight.w500,
                           ),
                           stepGranularity: 0.2,

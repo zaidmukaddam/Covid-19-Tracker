@@ -5,10 +5,10 @@ import 'package:auto_size_text/auto_size_text.dart';
 // ignore: must_be_immutable
 class HomeCategories extends StatelessWidget {
   const HomeCategories();
-  static AutoSizeGroup titleGrp=AutoSizeGroup();
-  static AutoSizeGroup descGrp=AutoSizeGroup();
+  static AutoSizeGroup titleGrp = AutoSizeGroup();
+  static AutoSizeGroup descGrp = AutoSizeGroup();
 
-  static List<Map<String,dynamic>> categoryData=[
+  static List<Map<String, dynamic>> categoryData = [
     {
       "imgLeft": 5.0,
       "imgBottom": 19.0,
@@ -18,15 +18,6 @@ class HomeCategories extends StatelessWidget {
       "tabDesc": "See how it is affecting the world",
       "color": Colors.deepPurpleAccent,
     },
-    // {
-    //   "imgPath": "assets/live.png",
-    //   "tabName": "Live Map",
-    //   "imgBottom": 10.0,
-    //   "imgLeft": 5.0,
-    //   "imgHeight": 100.0,
-    //   "tabDesc": "Live Map of Covid 19's Spread",
-    //   "color": Colors.tealAccent[700],
-    // },
     {
       "imgLeft": 15.0,
       "imgBottom": -8.0,
@@ -79,8 +70,8 @@ class HomeCategories extends StatelessWidget {
     return ListView.builder(
       itemCount: categoryData.length,
       physics: BouncingScrollPhysics(),
-      itemBuilder: (context,index){
-        var cat=categoryData[index];
+      itemBuilder: (context, index) {
+        var cat = categoryData[index];
         return CategoryTab(
           titleGrp: titleGrp,
           descGrp: descGrp,
@@ -95,5 +86,4 @@ class HomeCategories extends StatelessWidget {
       },
     );
   }
-
 }

@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 
 import '../../values/default_country_data.dart';
 import '../../widgets/stats_widgets/country_stat_widget.dart';
@@ -28,7 +29,7 @@ class _DefaultCountryScreenState extends State<DefaultCountryScreen> {
                 fontSize: 18,
                 fontFamily: "Montserrat",
                 fontWeight: FontWeight.normal,
-                color: Colors.black,
+                color: lighttheme ? Colors.white : Colors.black,
               ),
               maxFontSize: 18,
             ),
@@ -45,7 +46,7 @@ class _DefaultCountryScreenState extends State<DefaultCountryScreen> {
                 width: double.infinity,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: lighttheme ? Colors.white : Colors.black,
                   borderRadius: BorderRadius.circular(13),
                 ),
                 child: Center(
@@ -55,7 +56,7 @@ class _DefaultCountryScreenState extends State<DefaultCountryScreen> {
                       fontSize: 20,
                       fontFamily: "Montserrat",
                       fontWeight: FontWeight.w600,
-                      color: Colors.white,
+                      color: lighttheme ? Colors.black : Colors.white,
                     ),
                     maxFontSize: 20,
                   ),

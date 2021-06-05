@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 
 import '../widgets/home_page_widgets/precaution_card_grid.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class _PrecautionsScreenState extends State<PrecautionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: lighttheme ? Colors.blueGrey : Colors.grey[100],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(

@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 import '../widgets/home_page_widgets/symptom_card_grid.dart';
 import 'package:flutter/material.dart';
+import '../screens/home_page.dart';
 
 //ignore: must_be_immutable
 class SymptomsScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SymptomsScreenState extends State<SymptomsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: lighttheme ? Colors.blueGrey : Colors.grey[100],
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         leading: IconButton(

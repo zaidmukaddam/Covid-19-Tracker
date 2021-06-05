@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import '../../values/default_country_data.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 
 import '../../widgets/stats_widgets/country_card_details.dart';
 import '../../network_requests/api_client.dart';
@@ -146,7 +147,9 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                                   widget.countryName,
                                   style: TextStyle(
                                     fontFamily: "Montserrat",
-                                    color: Colors.white,
+                                    color: lighttheme
+                                        ? Colors.black
+                                        : Colors.white,
                                     fontSize: 22,
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -180,7 +183,8 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                                 "Unavailable",
                                 style: TextStyle(
                                   fontFamily: "Montserrat",
-                                  color: Colors.white,
+                                  color:
+                                      lighttheme ? Colors.black : Colors.white,
                                   fontSize: 37,
                                   letterSpacing: 1.1,
                                   fontWeight: FontWeight.w600,
@@ -194,7 +198,9 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                                   snapshot.data.toString(),
                                   style: TextStyle(
                                     fontFamily: "Montserrat",
-                                    color: Colors.white,
+                                    color: lighttheme
+                                        ? Colors.black
+                                        : Colors.white,
                                     fontSize: 37,
                                     letterSpacing: 1.1,
                                     fontWeight: FontWeight.w600,
@@ -206,7 +212,8 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                                 formatter.format(todayJson["cases"]),
                                 style: TextStyle(
                                   fontFamily: "Montserrat",
-                                  color: Colors.white,
+                                  color:
+                                      lighttheme ? Colors.black : Colors.white,
                                   fontSize: 37,
                                   letterSpacing: 1.1,
                                   fontWeight: FontWeight.w600,
@@ -218,7 +225,7 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                               formatter.format(widget.totalCases),
                               style: TextStyle(
                                 fontFamily: "Montserrat",
-                                color: Colors.white,
+                                color: lighttheme ? Colors.black : Colors.white,
                                 fontSize: 37,
                                 letterSpacing: 1.1,
                                 fontWeight: FontWeight.w600,
@@ -237,7 +244,7 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                           widget.isIncreasing
                               ? Icons.arrow_upward
                               : Icons.arrow_downward,
-                          color: Colors.white,
+                          color: lighttheme ? Colors.black : Colors.white,
                           size: 28,
                         )
                       ],
@@ -255,7 +262,7 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height - 150,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: lighttheme ? Colors.black : Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
@@ -271,7 +278,7 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                     return Container(
                       margin: const EdgeInsets.all(15.0),
                       decoration: BoxDecoration(
-                        color: Color(0xfff3cfff),
+                        color: lighttheme ? Colors.black : Color(0xfff3cfff),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Center(

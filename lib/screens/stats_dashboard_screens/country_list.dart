@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 
 import '../../widgets/stats_widgets/countries_grid.dart';
 import '../../widgets/skeletons/country_list_skeleton.dart';
@@ -72,7 +73,7 @@ class _CountriesScreenState extends State<CountriesScreen> {
                 fontSize: 20,
                 fontFamily: "Montserrat",
                 fontWeight: FontWeight.w600,
-                color: Color(0xFF424242),
+                color: lighttheme ? Colors.white30 : Color(0xFF424242),
               ),
               stepGranularity: 1,
               maxFontSize: 20,
@@ -82,7 +83,7 @@ class _CountriesScreenState extends State<CountriesScreen> {
           //Search Bar
           Container(
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: lighttheme ? Colors.black : Colors.white,
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey[200],

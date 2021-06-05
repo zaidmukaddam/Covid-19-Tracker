@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 
 // ignore: must_be_immutable
 class CreditsScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class CreditsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: Colors.white,
+      backgroundColor: lighttheme ? Colors.black : Colors.white,
       body: Stack(
         children: <Widget>[
           //Back Button & Heading
@@ -35,13 +36,13 @@ class CreditsScreen extends StatelessWidget {
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all(
-                            color: Colors.black,
+                            color: lighttheme ? Colors.white : Colors.black,
                             width: 1.8,
                           )),
                       padding: const EdgeInsets.all(6),
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_back_ios,
-                        color: Colors.black,
+                        color: lighttheme ? Colors.white : Colors.black,
                         size: 18,
                       ),
                     ),
@@ -57,7 +58,7 @@ class CreditsScreen extends StatelessWidget {
                       fontSize: 21,
                       fontFamily: "Montserrat",
                       fontWeight: FontWeight.w600,
-                      color: Colors.black,
+                      color: lighttheme ? Colors.white : Colors.black,
                     ),
                     maxFontSize: 21,
                     maxLines: 1,
@@ -91,7 +92,7 @@ class CreditsScreen extends StatelessWidget {
                         fontSize: 25,
                         fontFamily: "Montserrat",
                         fontWeight: FontWeight.w600,
-                        color: Colors.black,
+                        color: lighttheme ? Colors.white : Colors.black,
                       ),
                       maxLines: 1,
                       maxFontSize: 25,
@@ -162,7 +163,7 @@ class CreditsScreen extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.black,
+                      color: lighttheme ? Colors.white : Colors.black,
                       width: 1.4,
                     ),
                     borderRadius: BorderRadius.circular(6),
@@ -180,7 +181,7 @@ class CreditsScreen extends StatelessWidget {
                           fontSize: 15,
                           fontFamily: "Montserrat",
                           fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                          color: lighttheme ? Colors.white : Colors.black,
                         ),
                         maxFontSize: 15,
                         maxLines: 1,
@@ -196,7 +197,7 @@ class CreditsScreen extends StatelessWidget {
                           fontSize: 15,
                           fontFamily: "Montserrat",
                           fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                          color: lighttheme ? Colors.white : Colors.black,
                         ),
                         maxFontSize: 15,
                         maxLines: 1,
@@ -207,7 +208,7 @@ class CreditsScreen extends StatelessWidget {
                           fontSize: 15,
                           fontFamily: "Montserrat",
                           fontWeight: FontWeight.w700,
-                          color: Colors.black,
+                          color: lighttheme ? Colors.white : Colors.black,
                         ),
                         maxFontSize: 15,
                         maxLines: 1,
@@ -216,7 +217,7 @@ class CreditsScreen extends StatelessWidget {
                       Image(
                         height: 18,
                         width: 18,
-                        color: Colors.black,
+                        color: lighttheme ? Colors.white : Colors.black,
                         image: AssetImage("assets/github.png"),
                       ),
                       SizedBox(width: 5),

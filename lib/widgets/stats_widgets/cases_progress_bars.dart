@@ -1,34 +1,41 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class CaseBars extends StatefulWidget {
   final color;
-  int totalActive,totalDeaths,totalRecovered,totalCases;
+  int totalActive, totalDeaths, totalRecovered, totalCases;
 
-  CaseBars({Key key, this.color,this.totalActive,this.totalDeaths,this.totalRecovered,this.totalCases}) : super(key: key);
+  CaseBars(
+      {Key key,
+      this.color,
+      this.totalActive,
+      this.totalDeaths,
+      this.totalRecovered,
+      this.totalCases})
+      : super(key: key);
 
   @override
   _CaseBarsState createState() => _CaseBarsState();
 }
 
 class _CaseBarsState extends State<CaseBars> {
-  Duration _progressDuration=Duration(milliseconds: 300);
+  Duration _progressDuration = Duration(milliseconds: 300);
   final formatter = new NumberFormat("#,###");
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-
         AutoSizeText(
           "Overall Statistics",
           style: TextStyle(
             fontSize: 22,
             fontFamily: "Montserrat",
             fontWeight: FontWeight.w700,
-            color: Colors.grey[800],
+            color: lighttheme ? Colors.white : Colors.grey[800],
           ),
           maxFontSize: 22,
         ),
@@ -49,22 +56,19 @@ class _CaseBarsState extends State<CaseBars> {
                 width: 8,
                 height: 8,
               ),
-
               SizedBox(width: 15),
-
               Expanded(
-                child: const AutoSizeText(
+                child: AutoSizeText(
                   "Total Active",
                   style: TextStyle(
                     fontSize: 14,
                     fontFamily: "Montserrat",
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFF424242),
+                    color: lighttheme ? Colors.white : Color(0xFF424242),
                   ),
                   maxFontSize: 14,
                 ),
               ),
-
               AutoSizeText(
                 "${formatter.format(widget.totalActive)}",
                 style: TextStyle(
@@ -76,7 +80,6 @@ class _CaseBarsState extends State<CaseBars> {
                 ),
                 maxFontSize: 14,
               ),
-
             ],
           ),
         ),
@@ -96,14 +99,15 @@ class _CaseBarsState extends State<CaseBars> {
                 width: double.infinity,
                 height: 5,
               ),
-
               AnimatedContainer(
                 duration: _progressDuration,
                 decoration: BoxDecoration(
                   color: widget.color,
                   borderRadius: BorderRadius.circular(5),
                 ),
-                width: widget.totalActive/widget.totalCases*MediaQuery.of(context).size.width,
+                width: widget.totalActive /
+                    widget.totalCases *
+                    MediaQuery.of(context).size.width,
                 height: 5,
               ),
             ],
@@ -126,9 +130,7 @@ class _CaseBarsState extends State<CaseBars> {
                 width: 8,
                 height: 8,
               ),
-
               SizedBox(width: 15),
-
               Expanded(
                 child: AutoSizeText(
                   "Total Recovered",
@@ -136,12 +138,11 @@ class _CaseBarsState extends State<CaseBars> {
                     fontSize: 14,
                     fontFamily: "Montserrat",
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFF424242),
+                    color: lighttheme ? Colors.white : Color(0xFF424242),
                   ),
                   maxFontSize: 14,
                 ),
               ),
-
               AutoSizeText(
                 "${formatter.format(widget.totalRecovered)}",
                 style: TextStyle(
@@ -153,7 +154,6 @@ class _CaseBarsState extends State<CaseBars> {
                 ),
                 maxFontSize: 14,
               ),
-
             ],
           ),
         ),
@@ -173,14 +173,15 @@ class _CaseBarsState extends State<CaseBars> {
                 width: double.infinity,
                 height: 5,
               ),
-
               AnimatedContainer(
                 duration: _progressDuration,
                 decoration: BoxDecoration(
                   color: widget.color,
                   borderRadius: BorderRadius.circular(5),
                 ),
-                width: widget.totalRecovered/widget.totalCases*MediaQuery.of(context).size.width,
+                width: widget.totalRecovered /
+                    widget.totalCases *
+                    MediaQuery.of(context).size.width,
                 height: 5,
               ),
             ],
@@ -203,22 +204,19 @@ class _CaseBarsState extends State<CaseBars> {
                 width: 8,
                 height: 8,
               ),
-
               SizedBox(width: 15),
-
               Expanded(
-                child: const AutoSizeText(
+                child: AutoSizeText(
                   "Total Deaths",
                   style: TextStyle(
                     fontSize: 14,
                     fontFamily: "Montserrat",
                     fontWeight: FontWeight.w600,
-                    color: Color(0xFF424242),
+                    color: lighttheme ? Colors.white : Color(0xFF424242),
                   ),
                   maxFontSize: 14,
                 ),
               ),
-
               AutoSizeText(
                 "${formatter.format(widget.totalDeaths)}",
                 style: TextStyle(
@@ -249,14 +247,16 @@ class _CaseBarsState extends State<CaseBars> {
                 width: double.infinity,
                 height: 5,
               ),
-
               AnimatedContainer(
                 duration: _progressDuration,
                 decoration: BoxDecoration(
                   color: widget.color,
                   borderRadius: BorderRadius.circular(5),
                 ),
-                width:widget.totalDeaths/widget.totalCases*MediaQuery.of(context).size.width+30,
+                width: widget.totalDeaths /
+                        widget.totalCases *
+                        MediaQuery.of(context).size.width +
+                    30,
                 height: 5,
               ),
             ],

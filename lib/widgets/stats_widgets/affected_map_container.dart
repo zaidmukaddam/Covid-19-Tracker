@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/home_page.dart';
 import 'package:covid_19_tracker/screens/livemap.dart';
 import 'package:flutter/material.dart';
+import '../../screens/home_page.dart';
 
 class AffectedAreasContainer extends StatelessWidget {
   const AffectedAreasContainer();
@@ -13,7 +15,7 @@ class AffectedAreasContainer extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.0),
-          color: Colors.white,
+          color: lighttheme ? Colors.grey : Colors.white,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +47,9 @@ class AffectedAreasContainer extends StatelessWidget {
                     ),
                     onPressed: () {
                       Navigator.push(
-                          context, MaterialPageRoute(builder: (context) => MapsScreen()));
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MapsScreen()));
                     },
                   )
                 ],

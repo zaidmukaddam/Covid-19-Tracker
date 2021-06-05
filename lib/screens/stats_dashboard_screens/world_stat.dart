@@ -1,3 +1,4 @@
+import 'package:covid_19_tracker/screens/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import '../../widgets/stats_widgets/animated_bottom_bar.dart';
@@ -100,7 +101,7 @@ class _WorldStatScreenState extends State<WorldStatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      backgroundColor: getScaffoldColor(),
+      backgroundColor: lighttheme ? Colors.black12 : getScaffoldColor(),
       body: SafeArea(
         child: FutureBuilder<bool>(
           future: future,

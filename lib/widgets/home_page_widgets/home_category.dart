@@ -73,7 +73,7 @@ class CategoryTab extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: color.withOpacity(0.13),
+                    color: color.withOpacity(0.19),
                   ),
                   height: 125,
                   child: Column(

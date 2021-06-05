@@ -6,6 +6,7 @@ import '../network_requests/api_client.dart';
 import '../network_requests/exceptions.dart';
 import '../widgets/skeletons/news_list_skeleton.dart';
 import 'package:flutter/material.dart';
+import '../screens/home_page.dart';
 
 class UpdatesScreen extends StatefulWidget {
   final imgPath;
@@ -56,7 +57,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
         title: AutoSizeText(
           "Covid-19 Updates",
           style: TextStyle(
-            color: Colors.black,
+            color: lighttheme ? Colors.white : Colors.black,
             fontFamily: "Montserrat",
             fontSize: 20,
             fontWeight: FontWeight.w600,
@@ -68,9 +69,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
         ),
         leading: IconButton(
           onPressed: () => Navigator.of(context).pop(),
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            color: lighttheme ? Colors.white : Colors.black,
             size: 26,
           ),
         ),
@@ -85,9 +86,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                 refresh();
               });
             },
-            icon: const Icon(
+            icon: Icon(
               Icons.refresh,
-              color: Colors.black,
+              color: lighttheme ? Colors.white : Colors.black,
               size: 26,
             ),
           ),
@@ -108,7 +109,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
 
                 //Divider
                 Divider(
-                  color: Colors.black,
+                  color: lighttheme ? Colors.white : Colors.black,
                   height: 25,
                   thickness: 2,
                 ),
@@ -130,7 +131,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                           style: TextStyle(
                             fontFamily: "Montserrat",
                             fontSize: 18,
-                            color: Colors.black,
+                            color: lighttheme ? Colors.white : Colors.black,
                             fontWeight: FontWeight.w600,
                           ),
                           stepGranularity: 2,
@@ -158,14 +159,15 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                       width: constraint.maxWidth * 0.63,
                       padding: const EdgeInsets.only(left: 15, right: 10),
                       decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: lighttheme ? Colors.white : Colors.black,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       height: 50,
                       child: Center(
                         child: Theme(
                           data: ThemeData(
-                            canvasColor: Colors.black,
+                            canvasColor:
+                                lighttheme ? Colors.white : Colors.black,
                           ),
                           child: DropdownButton<String>(
                             isExpanded: true,
@@ -176,12 +178,12 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                             ),
                             elevation: 20,
                             iconSize: 28,
-                            icon: const Icon(
+                            icon: Icon(
                               Icons.expand_more,
-                              color: Colors.white,
+                              color: lighttheme ? Colors.black : Colors.white,
                             ),
                             items: <DropdownMenuItem<String>>[
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: "publishedAt",
                                 child: SizedBox(
                                   width: 55,
@@ -190,7 +192,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                     style: TextStyle(
                                       fontFamily: "Montserrat",
                                       fontSize: 17,
-                                      color: Colors.white,
+                                      color: lighttheme
+                                          ? Colors.black
+                                          : Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     stepGranularity: 1,
@@ -199,7 +203,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                   ),
                                 ),
                               ),
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: "popular",
                                 child: SizedBox(
                                   width: 68,
@@ -208,7 +212,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                     style: TextStyle(
                                       fontFamily: "Montserrat",
                                       fontSize: 17,
-                                      color: Colors.white,
+                                      color: lighttheme
+                                          ? Colors.black
+                                          : Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     stepGranularity: 1,
@@ -217,7 +223,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                   ),
                                 ),
                               ),
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: "Last Week",
                                 child: SizedBox(
                                   width: 90,
@@ -226,7 +232,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                     style: TextStyle(
                                       fontFamily: "Montserrat",
                                       fontSize: 17,
-                                      color: Colors.white,
+                                      color: lighttheme
+                                          ? Colors.black
+                                          : Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     stepGranularity: 1,
@@ -235,7 +243,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                   ),
                                 ),
                               ),
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: "Last 15",
                                 child: SizedBox(
                                   width: 99,
@@ -244,7 +252,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                     style: TextStyle(
                                       fontFamily: "Montserrat",
                                       fontSize: 17,
-                                      color: Colors.white,
+                                      color: lighttheme
+                                          ? Colors.black
+                                          : Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     stepGranularity: 1,
@@ -253,7 +263,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                   ),
                                 ),
                               ),
-                              const DropdownMenuItem(
+                              DropdownMenuItem(
                                 value: "Last Month",
                                 child: SizedBox(
                                   width: 97,
@@ -262,7 +272,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                     style: TextStyle(
                                       fontFamily: "Montserrat",
                                       fontSize: 17,
-                                      color: Colors.white,
+                                      color: lighttheme
+                                          ? Colors.black
+                                          : Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
                                     stepGranularity: 1,
@@ -287,7 +299,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
 
                 //Divider
                 Divider(
-                  color: Colors.black,
+                  color: lighttheme ? Colors.white : Colors.black,
                   height: 25,
                   thickness: 2,
                 ),
@@ -308,7 +320,8 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                   height: (snapshot.data is FetchDataException)
                                       ? 20
                                       : 40,
-                                  color: Colors.black,
+                                  color:
+                                      lighttheme ? Colors.white : Colors.black,
                                   thickness: 2,
                                 );
                               },
@@ -317,7 +330,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                   return Container(
                                     height: 50,
                                     decoration: BoxDecoration(
-                                      color: Colors.grey[300],
+                                      color: Colors.grey,
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Center(
@@ -327,7 +340,9 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                                           fontFamily: "Montserrat",
                                           fontSize: 16,
                                           fontWeight: FontWeight.w600,
-                                          color: Colors.black,
+                                          color: lighttheme
+                                              ? Colors.white
+                                              : Colors.black,
                                         ),
                                         maxFontSize: 16,
                                         stepGranularity: 2,

@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 
 import '../../widgets/stats_widgets/affected_map_container.dart';
 import '../../widgets/stats_widgets/global_case_container.dart';
-// import '../../widgets/stats_widgets/world_stats_image.dart';
+import '../../screens/home_page.dart';
 import '../../widgets/skeletons/top_country_list_skeleton.dart';
 import '../../widgets/skeletons/world_stat_skeleton.dart';
 import '../../widgets/stats_widgets/top_country_list.dart';
@@ -119,11 +119,13 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
                       InkWell(
                         onTap: () => Navigator.of(context).pop(),
                         child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 15, right: 15, bottom: 5),
-                          child: const Icon(
+                          padding:
+                              EdgeInsets.only(left: 15, right: 15, bottom: 5),
+                          child: Icon(
                             Icons.arrow_back,
-                            color: Color(0xFF4A148C),
+                            color: lighttheme
+                                ? Colors.purpleAccent
+                                : Color(0xFF4A148C),
                             size: 26,
                           ),
                         ),
@@ -141,7 +143,9 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
                       AutoSizeText(
                         "Global Statistics",
                         style: TextStyle(
-                          color: Colors.purple[900],
+                          color: lighttheme
+                              ? Colors.indigoAccent
+                              : Colors.purple[900],
                           fontFamily: "Montserrat",
                           fontSize: 21,
                           fontWeight: FontWeight.w600,
@@ -201,7 +205,7 @@ class _GlobalStatScreenState extends State<GlobalStatScreen> {
                                 fontFamily: "Montserrat",
                                 fontSize: 18,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.black,
+                                color: lighttheme ? Colors.white : Colors.grey,
                               ),
                               maxFontSize: 18,
                             ),

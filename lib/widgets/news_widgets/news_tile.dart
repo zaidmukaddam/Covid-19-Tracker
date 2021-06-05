@@ -21,49 +21,49 @@ class NewsTile extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 95,
         child: LayoutBuilder(
-          builder: (ctx,constraint) => Row(
+          builder: (ctx, constraint) => Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               //News image
               article['urlToImage'] != null
                   ? CachedNetworkImage(
-                imageUrl: article['urlToImage'],
-                fit: BoxFit.cover,
-                width: 95,
-                height: 95,
-                placeholder: (context, url) => Container(
-                  width: 95,
-                  height: 95,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/updates/news.png"),
+                      imageUrl: article['urlToImage'],
                       fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                errorWidget: (context, url, dynamic) {
-                  return Container(
-                    width: 95,
-                    height: 95,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/updates/news.png"),
-                        fit: BoxFit.cover,
+                      width: 95,
+                      height: 95,
+                      placeholder: (context, url) => Container(
+                        width: 95,
+                        height: 95,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/updates/news.png"),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      errorWidget: (context, url, dynamic) {
+                        return Container(
+                          width: 95,
+                          height: 95,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/updates/news.png"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  : Container(
+                      width: 95,
+                      height: 95,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage("assets/updates/news.png"),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  );
-                },
-              )
-                  : Container(
-                width: 95,
-                height: 95,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/updates/news.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
 
               SizedBox(width: 8),
 
@@ -100,7 +100,8 @@ class NewsTile extends StatelessWidget {
                           article["description"] == null
                               ? "Read More for Details"
                               : "${article["description"]}",
-                          maxLines: MediaQuery.of(context).size.width > 340.0?4:3,
+                          maxLines:
+                              MediaQuery.of(context).size.width > 340.0 ? 4 : 3,
                           style: TextStyle(
                             fontFamily: "Montserrat",
                             fontSize: 11.8,

@@ -20,6 +20,8 @@ class _MapsScreenState extends State<MapsScreen> {
     return WebviewScaffold(
       appBar: AppBar(
         title: Text('Live Map'),
+        backgroundColor: Colors.tealAccent,
+        foregroundColor: Colors.blueGrey,
       ),
       url: url,
       withZoom: true,

@@ -17,7 +17,7 @@ class DefaultCountryScreen extends StatefulWidget {
 class _DefaultCountryScreenState extends State<DefaultCountryScreen> {
   @override
   Widget build(BuildContext context) {
-    if(defaultCountry.countryName==null){
+    if (defaultCountry.countryName == null) {
       return Padding(
         padding: const EdgeInsets.fromLTRB(15, 350, 15, 0),
         child: Column(
@@ -67,8 +67,9 @@ class _DefaultCountryScreenState extends State<DefaultCountryScreen> {
       );
     }
     return CountryStatWidget(
-      onBackArrow: (){
-        widget.controller.animateToPage(0, duration: Duration(milliseconds: 150), curve: Curves.easeInOut);
+      onBackArrow: () {
+        widget.controller.animateToPage(0,
+            duration: Duration(milliseconds: 150), curve: Curves.easeInOut);
       },
       countryName: defaultCountry.countryName,
       countryCode: defaultCountry.countryCode,

@@ -173,10 +173,11 @@ class MythsScreen extends StatelessWidget {
                               margin: const EdgeInsets.fromLTRB(23, 35, 23, 15),
                               child: LayoutBuilder(
                                 builder: (ctx, constraint) => Column(
-                                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
                                   children: <Widget>[
                                     LimitedBox(
-                                      maxHeight: constraint.maxHeight*0.27,
+                                      maxHeight: constraint.maxHeight * 0.27,
                                       child: Image(
                                         image: AssetImage(
                                             "${myths[index]["imgPath"]}"),
@@ -184,10 +185,10 @@ class MythsScreen extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: constraint.maxHeight*0.11,
+                                      height: constraint.maxHeight * 0.11,
                                     ),
                                     LimitedBox(
-                                      maxHeight: constraint.maxHeight*0.17,
+                                      maxHeight: constraint.maxHeight * 0.17,
                                       child: AutoSizeText(
                                         "${myths[index]["myth"]}",
                                         textAlign: TextAlign.center,
@@ -207,7 +208,7 @@ class MythsScreen extends StatelessWidget {
                                       height: 13,
                                     ),
                                     LimitedBox(
-                                      maxHeight: constraint.maxHeight*0.45,
+                                      maxHeight: constraint.maxHeight * 0.45,
                                       child: AutoSizeText(
                                         "${myths[index]['desc']}",
                                         textAlign: TextAlign.center,

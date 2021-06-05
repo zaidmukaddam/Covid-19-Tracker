@@ -33,6 +33,8 @@ dependencies:
   device_preview: ^0.4.5
   flutter_svg: ^0.19.3
   flutter_webview_plugin: ^0.3.10+1
+  animated_text_kit: ^2.0.1
+  provider: ^5.0.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3

@@ -23,11 +23,11 @@ class _WorldStatScreenState extends State<WorldStatScreen> {
   List<BarItem> barItems;
   Future<bool> future;
 
-  Future<bool> loadPreferences() async{
-    SharedPreferences prefs=await SharedPreferences.getInstance();
-    var jsonString=prefs.getString('defaultCountry');
-    if(jsonString!=null){
-      defaultCountry=DefaultCountry().fromJson(json.decode(jsonString));
+  Future<bool> loadPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var jsonString = prefs.getString('defaultCountry');
+    if (jsonString != null) {
+      defaultCountry = DefaultCountry().fromJson(json.decode(jsonString));
       return true;
     }
     return false;
@@ -36,13 +36,17 @@ class _WorldStatScreenState extends State<WorldStatScreen> {
   @override
   void initState() {
     super.initState();
-    future=loadPreferences();
+    future = loadPreferences();
     _controller = new PageController(initialPage: selectedBottomBarIndex);
-    pages=[
-      GlobalStatScreen(controller: _controller,),
+    pages = [
+      GlobalStatScreen(
+        controller: _controller,
+      ),
       CountriesScreen(),
       DefaultCountryScreen(controller: _controller),
-      CreditsScreen(controller: _controller,),
+      CreditsScreen(
+        controller: _controller,
+      ),
     ];
     barItems = [
       BarItem(
@@ -82,10 +86,14 @@ class _WorldStatScreenState extends State<WorldStatScreen> {
     super.dispose();
   }
 
-  Color getScaffoldColor(){
-    if(selectedBottomBarIndex==0) return Colors.grey[100];
-    else if(selectedBottomBarIndex==1 || selectedBottomBarIndex==3) return Colors.white;
-    return defaultCountry.countryName==null?Colors.white:Colors.transparent;
+  Color getScaffoldColor() {
+    if (selectedBottomBarIndex == 0)
+      return Colors.grey[100];
+    else if (selectedBottomBarIndex == 1 || selectedBottomBarIndex == 3)
+      return Colors.white;
+    return defaultCountry.countryName == null
+        ? Colors.white
+        : Colors.transparent;
   }
 
   @override
@@ -96,8 +104,8 @@ class _WorldStatScreenState extends State<WorldStatScreen> {
       body: SafeArea(
         child: FutureBuilder<bool>(
           future: future,
-          builder:(context,snapshot) {
-            if(snapshot.hasData){
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
               return PageView.builder(
                 itemCount: 4,
                 physics: BouncingScrollPhysics(),

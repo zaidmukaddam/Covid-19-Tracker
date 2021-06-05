@@ -97,7 +97,7 @@ class _CountriesScreenState extends State<CountriesScreen> {
                 color: themeColor,
                 fontFamily: "Montserrat",
                 fontWeight: FontWeight.normal,
-                fontSize: MediaQuery.of(context).size.width<360.0?16:18,
+                fontSize: MediaQuery.of(context).size.width < 360.0 ? 16 : 18,
               ),
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(vertical: 17),
@@ -113,7 +113,9 @@ class _CountriesScreenState extends State<CountriesScreen> {
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(15),
                   borderSide: BorderSide(
-                      color: themeColor, width: 1.4, style: BorderStyle.solid,
+                    color: themeColor,
+                    width: 1.4,
+                    style: BorderStyle.solid,
                   ),
                 ),
                 prefixIcon: Icon(

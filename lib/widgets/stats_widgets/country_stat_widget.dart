@@ -158,19 +158,6 @@ class _CountryStatWidgetState extends State<CountryStatWidget>
                           ],
                         ),
                       ),
-
-                      //More Icon
-                      // Padding(
-                      //   padding: const EdgeInsets.only(right: 13, top: 3),
-                      //   child: InkWell(
-                      //     child: const Icon(
-                      //       Icons.more_horiz,
-                      //       color: Colors.white60,
-                      //       size: 30,
-                      //     ),
-                      //     onTap: () {},
-                      //   ),
-                      // )
                     ],
                   ),
 

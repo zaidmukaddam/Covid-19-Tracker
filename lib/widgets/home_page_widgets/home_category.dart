@@ -1,5 +1,4 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:covid_19_tracker/screens/livemap.dart';
 
 import '../../screens/myths_page.dart';
 import '../../screens/precautions_page.dart';
@@ -13,7 +12,7 @@ import 'package:flutter/material.dart';
 class CategoryTab extends StatelessWidget {
   final imgPath, tabName, tabDesc, imgHeight, imgLeft, imgBottom;
   final Color color;
-  final AutoSizeGroup titleGrp,descGrp;
+  final AutoSizeGroup titleGrp, descGrp;
 
   const CategoryTab(
       {this.imgPath,
@@ -23,8 +22,8 @@ class CategoryTab extends StatelessWidget {
       this.imgHeight = 150.0,
       this.imgLeft = 15.0,
       this.imgBottom = -8.0,
-      this.titleGrp, this.descGrp}
-  );
+      this.titleGrp,
+      this.descGrp});
 
   Function getPage(tabName, context) {
     switch (tabName) {
@@ -32,10 +31,6 @@ class CategoryTab extends StatelessWidget {
         return () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) =>
                 SymptomsScreen(color: color, imgPath: imgPath)));
-      case ("Live Map"):
-        return () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) =>
-                MapsScreen(color: color, imgPath: imgPath)));
       case ("Precautions"):
         return () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) =>

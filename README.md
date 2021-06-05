@@ -6,23 +6,23 @@ Covid Tracker is an app made with **Flutter** framework to provide worldwide inf
 
 ## :iphone: Features
 
-  - Global case count.
-  - Case, death and recovery count of each country
-  - Total tests and infection probability of each country
-  - News updates related to vaccine development
-  - Info, symptoms, precautions and myths of the virus
-  - Setting a default country
-  - Live Map
+- Global case count.
+- Case, death and recovery count of each country
+- Total tests and infection probability of each country
+- News updates related to vaccine development
+- Info, symptoms, precautions and myths of the virus
+- Setting a default country
+- Live Map
 
 The UI is inspired by [Dribbble](https://dribbble.com/shots/10847147-Coronavirus-Covid-19-Dashboard)
 
 ## ⭐ Future Features
 
-  - Drawer for easier navigation
-  - Onboarding screens
-  - Login authentication using Firebase
+- Drawer for easier navigation
+- Onboarding screens
+- Login authentication using Firebase
 
 ## 🚀 Technologies
 
-  - [Flutter v1.17.4](https://storage.googleapis.com/flutter_infra/releases/stable/windows/flutter_windows_1.17.4-stable.zip)
-  - [Dart v2.8.4](https://dart.dev/get-dart)
+- [Flutter v1.17.4](https://storage.googleapis.com/flutter_infra/releases/stable/windows/flutter_windows_1.17.4-stable.zip)
+- [Dart v2.8.4](https://dart.dev/get-dart)

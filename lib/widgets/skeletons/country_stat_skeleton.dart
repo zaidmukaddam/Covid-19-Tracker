@@ -4,23 +4,26 @@ class CountryStatLoader extends StatefulWidget {
   final Color color;
   final bool isDefault;
 
-  const CountryStatLoader({Key key, this.color, this.isDefault}) : super(key: key);
-
+  const CountryStatLoader({Key key, this.color, this.isDefault})
+      : super(key: key);
 
   @override
   _CountryStatLoaderState createState() => _CountryStatLoaderState();
 }
 
-class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProviderStateMixin{
+class _CountryStatLoaderState extends State<CountryStatLoader>
+    with TickerProviderStateMixin {
   AnimationController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller=AnimationController(vsync: this,duration: Duration(milliseconds: 700),lowerBound: 0.5)
+    _controller = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 700), lowerBound: 0.5)
       ..addStatusListener((status) {
-        if(status==AnimationStatus.completed) _controller.reverse();
-        else if(status==AnimationStatus.dismissed) _controller.forward();
+        if (status == AnimationStatus.completed)
+          _controller.reverse();
+        else if (status == AnimationStatus.dismissed) _controller.forward();
       });
     _controller.forward();
   }
@@ -36,12 +39,10 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: <Widget>[
-
         //Today / Yesterday Title
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
             Text(
               "Today",
               style: TextStyle(
@@ -51,7 +52,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                   fontSize: 22.0),
             ),
             SizedBox(width: 25),
-
             Text(
               "Yesterday",
               style: TextStyle(
@@ -75,7 +75,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-
                   //New Affected
                   Expanded(
                     child: Container(
@@ -89,7 +88,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-
                           //Title
                           Container(
                             decoration: BoxDecoration(
@@ -160,7 +158,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-
                   //New tested
                   Container(
                     width: 145,
@@ -202,7 +199,7 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                   //New Recovered || Probability
                   Expanded(
                     child: Container(
-                      width:175,
+                      width: 175,
                       height: 95,
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
@@ -247,7 +244,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
         //Case Progress Bars
         Column(
           children: <Widget>[
-
             Text(
               "Overall Statistics",
               style: TextStyle(
@@ -257,16 +253,15 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                 color: Colors.grey[800],
               ),
             ),
-
             SizedBox(height: 10),
-
             FadeTransition(
               opacity: _controller,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 16),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 16),
                 decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    borderRadius: BorderRadius.circular(13),
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(13),
                 ),
                 child: Column(
                   children: <Widget>[
@@ -284,7 +279,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                             height: 12,
                             width: 65,
                           ),
-
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.grey,
@@ -293,7 +287,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                             height: 12,
                             width: 50,
                           ),
-
                         ],
                       ),
                     ),
@@ -321,7 +314,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.grey,
@@ -330,7 +322,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                             height: 12,
                             width: 80,
                           ),
-
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.grey,
@@ -339,7 +330,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                             height: 12,
                             width: 45,
                           ),
-
                         ],
                       ),
                     ),
@@ -367,7 +357,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.grey,
@@ -376,7 +365,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                             height: 12,
                             width: 65,
                           ),
-
                           Container(
                             decoration: BoxDecoration(
                               color: Colors.grey,
@@ -385,7 +373,6 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
                             height: 12,
                             width: 42,
                           ),
-
                         ],
                       ),
                     ),
@@ -414,25 +401,26 @@ class _CountryStatLoaderState extends State<CountryStatLoader> with TickerProvid
         Expanded(child: SizedBox(height: 20)),
 
         //Set as default button
-        if(!widget.isDefault) Container(
-          width: double.infinity,
-          height: 50,
-          decoration: BoxDecoration(
-            color: widget.color,
-            borderRadius: BorderRadius.circular(13),
-          ),
-          child: Center(
-            child: const Text(
-              "Set as default",
-              style: TextStyle(
-                fontSize: 20,
-                fontFamily: "Montserrat",
-                fontWeight: FontWeight.w600,
-                color: Colors.white,
+        if (!widget.isDefault)
+          Container(
+            width: double.infinity,
+            height: 50,
+            decoration: BoxDecoration(
+              color: widget.color,
+              borderRadius: BorderRadius.circular(13),
+            ),
+            child: Center(
+              child: const Text(
+                "Set as default",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontFamily: "Montserrat",
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
-        ),
       ],
     );
   }

@@ -18,8 +18,7 @@ class CountryStatScreen extends StatefulWidget {
   _CountryStatScreenState createState() => _CountryStatScreenState();
 }
 
-class _CountryStatScreenState extends State<CountryStatScreen>{
-
+class _CountryStatScreenState extends State<CountryStatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +26,7 @@ class _CountryStatScreenState extends State<CountryStatScreen>{
       body: SafeArea(
         child: CountryStatWidget(
           color: widget.color,
-          onBackArrow: (){
+          onBackArrow: () {
             Navigator.of(context).pop();
           },
           countryCode: widget.countryCode,

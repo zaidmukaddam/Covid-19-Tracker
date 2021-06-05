@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:covid_19_tracker/screens/livemap.dart';
 import 'package:flutter/material.dart';
 
 class AffectedAreasContainer extends StatelessWidget {
@@ -42,7 +43,10 @@ class AffectedAreasContainer extends StatelessWidget {
                       color: Color(0xFF7B1FA2),
                       size: 28,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => MapsScreen()));
+                    },
                   )
                 ],
               ),
